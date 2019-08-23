@@ -1,4 +1,3 @@
-require 'pry'
 
   # This is the array we will be passing into the remove_strawberry method
   # contacts = {
@@ -15,5 +14,14 @@ require 'pry'
   # }
   
 def remove_strawberry(contacts)
-
+  contacts.each { |name, detail|
+    if name == "Freddy Mercury"
+      detail.each { |k, v|
+          if k == :favorite_ice_cream_flavors
+            v.delete_if { |e| e == "strawberry"  }
+          end
+      }
+    end
+    
+  }
 end
